@@ -1,7 +1,8 @@
 baselines
 baseline: spec
 	<baseline>
-	( MCWorkingCopy forPackageNamed: 'BaselineOfZodiac' ) unload.
+	(MCWorkingCopy hasPackageNamed: 'BaselineOfZodiac')
+		ifTrue: [ (MCWorkingCopy forPackageNamed: 'BaselineOfZodiac') unload ].
 	spec for: #common do: [
 		spec 
 			baseline: 'Zodiac' with: [ spec repository: 'github://svenvc/zodiac:master/repository' ];
