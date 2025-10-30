@@ -1,11 +1,7 @@
 baselines
 baseline: spec
 	<baseline>
-	"In Pharo 7 MCWorkingCopy hasPackageNamed: returns the class :facepalm:"
-	(((MCWorkingCopy hasPackageNamed: 'BaselineOfZodiac') == true) and: [
-		MCWorkingCopy respondsTo: #forPackageNamed:
-	])
-		ifTrue: [ (MCWorkingCopy forPackageNamed: 'BaselineOfZodiac') unload ].
+	self unloadBaselineOfZodiac.
 	spec for: #common do: [
 		spec 
 			baseline: 'Zodiac' with: [ spec repository: 'github://svenvc/zodiac:master/repository' ];
