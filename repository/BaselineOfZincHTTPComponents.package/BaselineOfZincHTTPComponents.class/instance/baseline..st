@@ -1,7 +1,9 @@
 baselines
 baseline: spec
 	<baseline>
-	(MCWorkingCopy hasPackageNamed: 'BaselineOfZodiac')
+	((MCWorkingCopy hasPackageNamed: 'BaselineOfZodiac') and: [
+		MCPWorkincCopy respondsTo: #forPackageNamed:
+	])
 		ifTrue: [ (MCWorkingCopy forPackageNamed: 'BaselineOfZodiac') unload ].
 	spec for: #common do: [
 		spec 
